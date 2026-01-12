@@ -65,23 +65,34 @@ body {
 }
 main {
   margin: auto;
-  max-width: 1680px;
-  padding: 0px 32px 32px 32px;
+  max-width: 1440px;
+  padding: 100px 24px;
 }
 /* General header styling */
 header {
+  white-space: nowrap;
+  background-color: var(--color-header);
+  z-index: 50;
+  position: fixed;
+  right: 0;
+  left: 0;
+  padding: 20px 0px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+header div {
   display: flex;
   justify-content: space-between;
+  padding: 0px 8px;
   align-items: center;
-  padding: 20px 24px;
-  background-color: var(--color-header);
-  position: relative;
-  z-index: 50;
+  max-width: 1440px;
+  column-gap: 32px;
+  width: 100%;
 }
-
-header .header-left img {
-  height: 30px;
-  scale: 1.5;
+header img {
+  height: 40px;
+  max-width: none;
 }
 
 /* Desktop nav links */
@@ -89,6 +100,7 @@ header nav {
   display: flex;
   column-gap: 24px;
   align-items: center;
+  width: 100%;
 }
 
 header nav a {
@@ -106,14 +118,13 @@ header nav a:hover {
 header .header-right {
   display: flex;
   align-items: center;
-  column-gap: 16px;
+  width: max-content;
 }
 
 header .user-profile {
   color: var(--color-bg);
   display: flex;
-  flex-direction: row;
-  column-gap: 12px;
+  column-gap: 4px;
   align-items: center;
 }
 
@@ -222,11 +233,15 @@ label.checkbox-label {
 }
 /* product card styling */
 .products-grid {
-  margin-top: 24px;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   gap: 32px;
   position: relative;
+}
+.home-page {
+  display: flex;
+  flex-direction: column;
+  row-gap: 24px;
 }
 .home-page .products-grid {
   justify-content: start;
@@ -304,7 +319,7 @@ label.checkbox-label {
   display: flex;
   flex-direction: column;
   row-gap: 32px;
-  margin: 32px;
+  margin-bottom: 32px;
 }
 .form-product-page form {
   display: flex;
@@ -326,7 +341,7 @@ label.checkbox-label {
   display: flex;
   row-gap: 24px;
   flex-direction: column;
-  margin: 32px 0px 32px 0px;
+  margin-bottom: 32px;
 }
 .products-list-header h2 {
   font-weight: 500;
@@ -365,7 +380,6 @@ img.preview-image {
 
 /* admin-detail-product-page*/
 .detail-product-page {
-  margin-top: 64px;
   display: flex;
   gap: 24px;
   justify-content: space-evenly;
@@ -388,7 +402,6 @@ img.preview-image {
 }
 .detail-product-page img {
   max-width: 540px;
-  border-radius: 8px;
   width: 100%;
   aspect-ratio: 1;
   object-fit: contain;
@@ -411,7 +424,6 @@ img.preview-image {
 /* Home page style */
 .home-page h2 {
   font-weight: 500;
-  margin: 24px 0;
 }
 .bento-grid {
   display: grid;
@@ -494,9 +506,6 @@ img.preview-image {
 /* Responsive */
 /* ⬇️ Tablet */
 @media (max-width: 1024px) {
-  main {
-    padding: 0 16px;
-  }
   .products-grid {
     margin-top: 0;
   }
@@ -521,10 +530,22 @@ img.preview-image {
       "area2 area3"
       "area4 area5";
   }
+  header {
+    font-size: 14px;
+  }
+  header .user-profile {
+    flex-direction: column;
+  }
+  header .user-profile span {
+    font-size: 12px;
+  }
 }
 
 /* ⬇️ Mobile */
 @media (max-width: 768px) {
+  main {
+    padding: 100px 16px;
+  }
   textarea {
     font-size: 14px;
   }
@@ -590,6 +611,8 @@ img.preview-image {
     column-gap: 12px;
     padding-top: 16px;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
   .mobile-user-profile .CircleUserRound {
@@ -598,7 +621,12 @@ img.preview-image {
     color: var(--color-bg);
     border-radius: 50%;
   }
-
+  .mobile-user-profile .user-info {
+    display: flex;
+    justify-content: center;
+    width: max-content;
+    flex-direction: column;
+  }
   .mobile-user-profile .user-info h4 {
     margin: 0;
     font-size: 16px;

@@ -47,6 +47,8 @@ export default function EditProductPage() {
     if (oldProduct.description != form.description)
       formData.append("description", form.description);
     if (oldProduct.image != form.image) formData.append("image", form.image);
+    if (oldProduct.featured != form.featured)
+      formData.append("featured", form.featured);
     for (const [key, value] of formData.entries()) {
       console.log(key, value);
     }

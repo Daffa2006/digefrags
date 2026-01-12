@@ -28,7 +28,7 @@ export default function HomePage() {
           { removeDelay: 5000 }
         )
       );
-    apiFetch("/products?limit=6")
+    apiFetch("/products?limit=4")
       .then((data) => setNewestProducts(data))
       .catch((err) =>
         toast.error(

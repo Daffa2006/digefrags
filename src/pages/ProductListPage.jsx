@@ -88,7 +88,7 @@ export default function ManageProducts() {
       <Toaster />
       <div className="products-list-header">
         <div>
-          <h2>Manage Products</h2>
+          <h2>List Products</h2>
           <Link to="/products/create" className="btn primary">
             Create new products
           </Link>
